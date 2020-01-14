@@ -21,3 +21,10 @@ This is very heavily a WIP!
 
 - Let user define hyperparameters
 - Dynamic image input size
+
+# Have fun!
+I'd love to see what you generate using this, please post your synthesised images!
+
+Cheers,
+Jordan J. Bird
+http://jordanjamesbird.com/
