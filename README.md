@@ -29,6 +29,7 @@ Wishlist:
 - Allow images of only one colour channel
 - Figure out a better topology for faster learning
 - Figure out a better topology to prevent failure cases (eg. losses hitting 0 and training ceasing)
+- Figure out whether I actually have implemented Barrat's topology completely, if someone who knows Torch can correct me and make a PR then please do
 
 # Have fun!
 I'd love to see what you generate using this, please post your synthesised images!
