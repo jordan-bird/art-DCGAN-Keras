@@ -33,6 +33,7 @@ Four examples are generated every time an epoch is finished
 This is very heavily a WIP!
 
 Wishlist:
+- Saving and reloading of weights
 - Let user define network hyperparameters
 - Dynamic image input size
 - Allow images of only one colour channel
