@@ -32,5 +32,7 @@ Wishlist:
 I'd love to see what you generate using this, please post your synthesised images!
 
 Cheers,
+
 Jordan J. Bird
+
 http://jordanjamesbird.com/
