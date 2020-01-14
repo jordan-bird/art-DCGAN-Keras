@@ -2,6 +2,8 @@
 WIP of Robbie Barrat's Art DCGAN in Keras.
 
 # Inspiration
+I didn't know how GANs worked, and I wanted to know how GANs worked... oh, [*and that AI painting sold for $432,500*](https://www.christies.com/features/A-collaboration-between-two-artists-one-human-one-a-machine-9332-1.aspx)
+
 Since Torch is an utter nightmare to install on Windows, here's a Keras implementation of Barrat's Art DCGAN
 
 The code was originally [Jason Brownlee's CIFAR10 GAN](https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-cifar-10-small-object-photographs-from-scratch/) before I butchered it
