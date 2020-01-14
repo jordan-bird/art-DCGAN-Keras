@@ -8,6 +8,8 @@ The code was originally [Jason Brownlee's CIFAR10 GAN](https://machinelearningma
 
 The topology of the Discriminator and Generator are from [Barrat's Art DCGAN](https://github.com/robbiebarrat/art-DCGAN)
 
+Model based on [Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks](https://arxiv.org/abs/1511.06434) (2015 preprint, Radford, et al.)
+
 # Usage
 Currently, images MUST be RGB and 128x128
 
