@@ -9,7 +9,7 @@ The code was originally [Jason Brownlee's CIFAR10 GAN](https://machinelearningma
 The topology of the Discriminator and Generator are from [Barrat's Art DCGAN](https://github.com/robbiebarrat/art-DCGAN)
 
 # Usage
-Currently, images MUST be 128x128
+Currently, images MUST be RGB and 128x128
 
 python keras-art-dcgan.py -dataset=datasetname
 
@@ -19,8 +19,12 @@ Image data should all be in /data/datasetname
 # To do
 This is very heavily a WIP!
 
-- Let user define hyperparameters
+Wishlist:
+- Let user define network hyperparameters
 - Dynamic image input size
+- Allow images of only one colour channel
+- Figure out a better topology for faster learning
+- Figure out a better topology to prevent failure cases (eg. losses hitting 0 and training ceasing)
 
 # Have fun!
 I'd love to see what you generate using this, please post your synthesised images!
