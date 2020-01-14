@@ -4,9 +4,9 @@ WIP of Robbie Barrat's Art DCGAN in Keras.
 # Inspiration
 Since Torch is an utter nightmare to install on Windows, here's a Keras implementation of Barrat's Art DCGAN
 
-The code was originally [Jason Brownlee's CIFAR10 GAN](https://www.google.com) before I butchered it
+The code was originally [Jason Brownlee's CIFAR10 GAN](https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-cifar-10-small-object-photographs-from-scratch/) before I butchered it
 
-The topology of the Discriminator and Generator are from [Barrat's Art DCGAN](https://www.google.com)
+The topology of the Discriminator and Generator are from [Barrat's Art DCGAN](https://github.com/robbiebarrat/art-DCGAN)
 
 # Usage
 Currently, images MUST be 128x128
