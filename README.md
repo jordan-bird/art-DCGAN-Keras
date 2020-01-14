@@ -19,6 +19,13 @@ python keras-art-dcgan.py -dataset=datasetname
 
 Image data should all be in /data/datasetname
 
+# Requirements
+- Keras
+- Tensorflow (or Theano if you switch it to channels last)
+- NumPy
+- Pillow
+- progressbar
+
 
 # To do
 This is very heavily a WIP!
