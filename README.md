@@ -19,6 +19,8 @@ python keras-art-dcgan.py -dataset=datasetname
 
 Image data should all be in /data/datasetname
 
+Four examples are generated every time an epoch is finished
+
 ## Requirements
 - Keras
 - Tensorflow (or Theano if you switch it to channels last)
@@ -37,6 +39,13 @@ Wishlist:
 - Figure out a better topology for faster learning
 - Figure out a better topology to prevent failure cases (eg. losses hitting 0 and training ceasing)
 - Figure out whether I actually have implemented Barrat's topology completely, if someone who knows Torch can correct me and make a PR then please do
+
+## Issues
+Sometimes, depending on data, losses can hit 0 and training will cease. 
+
+I'm not sure (yet) how to fix this if it's the Generator, but if the Discriminator is too strong then it can help to add Leaky ReLu or Dropout between the CNN layers.
+
+Datasets should be relatively varied, but not so much as to throw the model off-genre (unless that's what you're going for!)
 
 ## Have fun!
 I'd love to see what you generate using this, please post your synthesised images!
