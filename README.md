@@ -39,7 +39,7 @@ Wishlist:
 - Allow images of only one colour channel
 - Figure out a better topology for faster learning
 - Figure out a better topology to prevent failure cases (eg. losses hitting 0 and training ceasing)
-- Figure out whether I actually have implemented Barrat's topology completely, if someone who knows Torch can correct me and make a PR then please do
+- Properly implement and test Barrat's topology - currently I am using a GTX980Ti which doesn't have enough memory for the amount of filters he uses in the two networks. I've watered it down slightly as to have fewer parameters
 
 ## Issues
 Sometimes, depending on data, losses can hit 0 and training will cease. 
