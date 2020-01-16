@@ -19,7 +19,13 @@ python keras-art-dcgan.py -dataset=datasetname
 
 Image data should all be in /data/datasetname
 
-Four examples are generated every time an epoch is finished
+Four examples and models are saved every time an epoch is finished
+
+### Save and Load models
+python keras-art-dcgan.py -dataset=datasetname -save_model=faces -load_model=faces
+
+The d and g models will be saved into ./output/weights/ as faces-d.h5 and faces-g.h5
+The d and g models will be loaded from the above, selecting the -d and -g is automated, just provide a name
 
 ## Requirements
 - Keras
@@ -33,7 +39,6 @@ Four examples are generated every time an epoch is finished
 This is very heavily a WIP!
 
 Wishlist:
-- Saving and reloading of weights
 - Let user define network hyperparameters
 - Dynamic image input size
 - Allow images of only one colour channel
