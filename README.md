@@ -8,7 +8,7 @@ Since Torch is an utter nightmare to install on Windows, here's a Keras implemen
 
 The code was originally [Jason Brownlee's CIFAR10 GAN](https://machinelearningmastery.com/how-to-develop-a-generative-adversarial-network-for-a-cifar-10-small-object-photographs-from-scratch/) before I butchered it
 
-The topology of the Discriminator and Generator are from [Barrat's Art DCGAN](https://github.com/robbiebarrat/art-DCGAN)
+The topology of the Discriminator and Generator are from [Barrat's Art DCGAN](https://github.com/robbiebarrat/art-DCGAN) with fewer filters so it doesn't OOM on a GTX980Ti
 
 Model based on [Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks](https://arxiv.org/abs/1511.06434) (2015 preprint, Radford, et al.)
 
