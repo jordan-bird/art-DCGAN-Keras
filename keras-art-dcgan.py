@@ -5,6 +5,7 @@ from numpy import ones
 from numpy import vstack
 from numpy.random import randn
 from numpy.random import randint
+from keras.models import load_model
 from keras.optimizers import Adam
 from keras.models import Sequential
 from keras.layers import Dense
@@ -21,9 +22,12 @@ import argparse
 import os, os.path
 import progressbar
 from PIL import Image
+import time
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-dataset', help='Folder name of the dataset', required=True, type=str)
+parser.add_argument('-load_model', help='h5 file to load', required=False, type=str, default='NONE')
+parser.add_argument('-save_model', help='weight to be saved', required=False, type=str, default='NONE')
 args = parser.parse_args()
 
 # Best practice initialiser for GANS
@@ -127,8 +131,8 @@ def save_plot(examples, epoch, n=2):
 		# plot raw pixel data
 		pyplot.imshow(examples[i])
 	# save plot to file
-	filename = 'generated_plot_e%03d.png' % (epoch+1)
-	pyplot.savefig(filename)
+	filename = str(int(round(time.time() * 1000))) + '.png'
+	pyplot.savefig("./output/samples/" + filename)
 	pyplot.close()
 
 # evaluate the discriminator, plot generated images, save generator model
@@ -146,8 +150,9 @@ def summarize_performance(epoch, g_model, d_model, dataset, latent_dim, n_sample
 	# save plot
 	save_plot(x_fake, epoch)
 	# save the generator model tile file
-	filename = 'generator_model_%03d.h5' % (epoch+1)
-	#g_model.save(filename)
+	if(args.save_model != 'NONE'):
+		g_model.save("./output/weights/" + args.save_model + '-g.h5')
+		d_model.save("./output/weights/" + args.save_model + '-d.h5')
 
 # train the generator and discriminator
 def train(g_model, d_model, gan_model, dataset, latent_dim, n_epochs=1000, n_batch=64):
@@ -174,9 +179,9 @@ def train(g_model, d_model, gan_model, dataset, latent_dim, n_epochs=1000, n_bat
 			# summarize loss on this batch
 			print('>%d, %d/%d, d1=%.3f, d2=%.3f g=%.3f' %
 				(i+1, j+1, bat_per_epo, d_loss1, d_loss2, g_loss))
-		# evaluate the model performance, sometimes
-		if (i+1) % 1 == 0:
-			summarize_performance(i, g_model, d_model, dataset, latent_dim)
+			if (i+1) % 1 == 0:
+				summarize_performance(i, g_model, d_model, dataset, latent_dim)
+		
 
 
 def loadImages(location):
@@ -206,13 +211,26 @@ def loadImages(location):
 imageFiles = "./data/" + args.dataset
 
 
+args.load_model
+
 
 # size of the latent space
 latent_dim = 100
-# create the discriminator
-d_model = define_discriminator()
-# create the generator
-g_model = define_generator(latent_dim)
+
+#load weights 
+if(args.load_model != 'NONE'):
+	print("Loading weights for: " + args.load_model)
+	g_model = load_model("./output/weights/" + args.load_model + '-g.h5')
+	d_model = load_model("./output/weights/" + args.load_model + '-d.h5')
+	print("Success!")
+else:
+	print("Creating new models")
+	# create the discriminator
+	d_model = define_discriminator()
+	# create the generator
+	g_model = define_generator(latent_dim)
+	print("Success!")
+
 # create the gan
 gan_model = define_gan(g_model, d_model)
 # load image data
