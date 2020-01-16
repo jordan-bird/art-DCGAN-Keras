@@ -179,8 +179,8 @@ def train(g_model, d_model, gan_model, dataset, latent_dim, n_epochs=1000, n_bat
 			# summarize loss on this batch
 			print('>%d, %d/%d, d1=%.3f, d2=%.3f g=%.3f' %
 				(i+1, j+1, bat_per_epo, d_loss1, d_loss2, g_loss))
-			if (i+1) % 1 == 0:
-				summarize_performance(i, g_model, d_model, dataset, latent_dim)
+		if (i+1) % 1 == 0:
+			summarize_performance(i, g_model, d_model, dataset, latent_dim)
 		
 
 
